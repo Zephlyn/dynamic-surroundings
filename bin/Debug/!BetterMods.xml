@@ -1,0 +1,1683 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>!BetterMods</name>
+    </assembly>
+    <members>
+        <member name="T:Wully.Events.BetterEvents">
+            <summary>
+            A system for managing Blade and Sorcery events
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerTelekinesisChokeCreature">
+            <summary>
+            Player choked creature with telekinesis
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerHandChokeCreature">
+            <summary>
+            Player choked creature with hand
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerChokeCreature">
+            <summary>
+            Player choked creature with hand or Telekinesis
+            </summary>
+        </member>
+        <member name="T:Wully.Events.BetterEvents.ChokeEvent">
+            <summary>
+            ChokeEvent
+            </summary>
+            <param name="side"></param>
+            <param name="handle"></param>
+            <param name="creature"></param>
+            <param name="eventTime"></param>
+        </member>
+        <member name="T:Wully.Events.BetterEvents.PlayerHandGrabEvent">
+            <summary>
+            Event is called when a player hand grabs something
+            </summary>
+            <param name="side"></param> Which hand grabbed it
+            <param name="handle"></param> Handle of the thing grabbed
+            <param name="axisPosition"></param>
+            <param name="orientation"></param>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerHandGrabHandle">
+            <summary>
+            One of the players hands grabs a handle
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerLeftHandGrabHandle">
+            <summary>
+            Players Left hand grabs a handle
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerRightHandGrabHandle">
+            <summary>
+            Players Right hand grabs a handle
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerHandGrabItemHandle">
+            <summary>
+            One of the players hands grabs a item
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerLeftHandGrabItemHandle">
+            <summary>
+            Players Left hand grabs a item
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerRightHandGrabItemHandle">
+            <summary>
+            Players Right hand grabs a item
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerHandGrabRagdollPartHandle">
+            <summary>
+            One of the players hands grabs a ragdollpart
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerLeftHandGrabRagdollPartHandle">
+            <summary>
+            Players Left hand grabs a ragdollpart
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerRightHandGrabRagdollPartHandle">
+            <summary>
+            Players Right hand grabs a ragdollpart
+            </summary>
+        </member>
+        <member name="T:Wully.Events.BetterEvents.PlayerHandUnGrabEvent">
+            <summary>
+            Event is called when a player hand ungrabs something
+            </summary>
+            <param name="side"></param>
+            <param name="handle"></param>
+            <param name="throwing"></param>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerHandUnGrabHandle">
+            <summary>
+            One of the players hands ungrabs a handle
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerLeftHandUnGrabHandle">
+            <summary>
+            Players Left hand ungrabs a handle
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerRightHandUnGrabHandle">
+            <summary>
+            Players Right hand ungrabs a handle
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerHandUnGrabItemHandle">
+            <summary>
+            One of the players hands ungrabs a item
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerLeftHandUnGrabItemHandle">
+            <summary>
+            Players Left hand ungrabs a item
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerRightHandUnGrabItemHandle">
+            <summary>
+            Players Right hand ungrabs a item
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerHandUnGrabRagdollPartHandle">
+            <summary>
+            One of the players hands ungrabs a ragdollpart
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerLeftHandUnGrabRagdollPartHandle">
+            <summary>
+            Players Left hand ungrabs a ragdollpart
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerRightHandUnGrabRagdollPartHandle">
+            <summary>
+            Players Right hand ungrabs a ragdollpart
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerHandThrowHandle">
+            <summary>
+            One of the players hands throws a handle
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerLeftHandThrowHandle">
+            <summary>
+            Players Left hand throws a handle
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerRightHandThrowHandle">
+            <summary>
+            Players Right hand throws a handle
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerHandThrowItemHandle">
+            <summary>
+            One of the players hands throws a item
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerLeftHandThrowItemHandle">
+            <summary>
+            Players Left hand throws a item
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerRightHandThrowItemHandle">
+            <summary>
+            Players Right hand throws a item
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerHandThrowRagdollPartHandle">
+            <summary>
+            One of the players hands throws a ragdollpart
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerLeftHandThrowRagdollPartHandle">
+            <summary>
+            Players Left hand throws a ragdollpart
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerRightHandThrowRagdollPartHandle">
+            <summary>
+            Players Right hand throws a ragdollpart
+            </summary>
+        </member>
+        <member name="M:Wully.Events.BetterEvents.InvokePlayerHandUnGrabEvent(ThunderRoad.Side,ThunderRoad.Handle,System.Boolean,ThunderRoad.EventTime)">
+            <summary>
+            Triggers PlayerHandUnGrabEvent
+            </summary>
+            <param name="side"></param>
+            <param name="handle"></param>
+            <param name="throwing"></param>
+            <param name="eventTime"></param>
+        </member>
+        <member name="T:Wully.Events.BetterEvents.PlayerTelekinesisGrabEvent">
+            <summary>
+            Event is called when a player Telekinesis grabs something
+            </summary>
+            <param name="side"></param>
+            <param name="handle"></param>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerTelekinesisGrabHandle">
+            <summary>
+            One of the players Telekinesiss grabs a Handle
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerLeftTelekinesisGrabHandle">
+            <summary>
+            Players Left Telekinesis grabs a Handle
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerRightTelekinesisGrabHandle">
+            <summary>
+            Players Right Telekinesis grabs a Handle
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerTelekinesisGrabItemHandle">
+            <summary>
+            One of the players Telekinesiss grabs a item
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerLeftTelekinesisGrabItemHandle">
+            <summary>
+            Players Left Telekinesis grabs a item
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerRightTelekinesisGrabItemHandle">
+            <summary>
+            Players Right Telekinesis grabs a item
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerTelekinesisGrabRagdollPartHandle">
+            <summary>
+            One of the players Telekinesiss grabs a ragdollpart
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerLeftTelekinesisGrabRagdollPartHandle">
+            <summary>
+            Players Left Telekinesis grabs a ragdollpart
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerRightTelekinesisGrabRagdollPartHandle">
+            <summary>
+            Players Right Telekinesis grabs a ragdollpart
+            </summary>
+        </member>
+        <member name="M:Wully.Events.BetterEvents.InvokePlayerTelekinesisGrabEvent(ThunderRoad.Side,ThunderRoad.Handle)">
+            <summary>
+            Triggers PlayerTelekinesisGrabEvent
+            </summary>
+            <param name="side"></param>
+            <param name="handle"></param>
+        </member>
+        <member name="T:Wully.Events.BetterEvents.PlayerTelekinesisUnGrabEvent">
+            <summary>
+            Event is called when a player Telekinesis ungrabs something
+            </summary>
+            <param name="side"></param>
+            <param name="handle"></param>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerTelekinesisUnGrabHandle">
+            <summary>
+            One of the players Telekinesiss ungrabs a Handle
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerLeftTelekinesisUnGrabHandle">
+            <summary>
+            Players Left Telekinesis ungrabs a Handle
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerRightTelekinesisUnGrabHandle">
+            <summary>
+            Players Right Telekinesis ungrabs a Handle
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerTelekinesisUnGrabItemHandle">
+            <summary>
+            One of the players Telekinesiss ungrabs a item
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerLeftTelekinesisUnGrabItemHandle">
+            <summary>
+            Players Left Telekinesis ungrabs a item
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerRightTelekinesisUnGrabItemHandle">
+            <summary>
+            Players Right Telekinesis ungrabs a item
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerTelekinesisUnGrabRagdollPartHandle">
+            <summary>
+            One of the players Telekinesiss ungrabs a ragdollpart
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerLeftTelekinesisUnGrabRagdollPartHandle">
+            <summary>
+            Players Left Telekinesis ungrabs a ragdollpart
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerRightTelekinesisUnGrabRagdollPartHandle">
+            <summary>
+            Players Right Telekinesis ungrabs a ragdollpart
+            </summary>
+        </member>
+        <member name="M:Wully.Events.BetterEvents.InvokePlayerTelekinesisUnGrabEvent(ThunderRoad.Side,ThunderRoad.Handle)">
+            <summary>
+            Triggers PlayerTelekinesisUngrabEvent
+            </summary>
+            <param name="side"></param>
+            <param name="handle"></param>
+        </member>
+        <member name="T:Wully.Events.BetterEvents.ParryEvent">
+            <summary>
+            Player parried a creatures attack
+            </summary>
+            <remarks>
+            The creature is the AI creature and the collisionInstance is done by the AI creature
+            </remarks>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerParryingCreature">
+            <summary>
+            Player parried a creatures attack
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnCreatureParryingPlayer">
+            <summary>
+            Creature parried the Players attack
+            </summary>
+        </member>
+        <member name="M:Wully.Events.BetterEvents.InvokePlayerParryingCreature(ThunderRoad.Creature,ThunderRoad.CollisionInstance)">
+            <summary>
+            Invokes PlayerParryingCreature Event
+            </summary>
+            <param name="creature">The creature the player parried</param>
+            <param name="collisionInstance"></param>
+        </member>
+        <member name="M:Wully.Events.BetterEvents.InvokeCreatureParryingPlayer(ThunderRoad.Creature,ThunderRoad.CollisionInstance)">
+            <summary>
+            Invokes CreatureParryingPlayer Event
+            </summary>
+            <param name="creature">The creature that parried the player</param>
+            <param name="collisionInstance"></param>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerOnGround">
+            <summary>
+            Player has just touched the ground
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerOffGround">
+            <summary>
+            Player has just left the ground
+            </summary>
+        </member>
+        <member name="T:Wully.Events.BetterEvents.PlayerGroundEvent">
+            <summary>
+            Player touching or leaving the ground event
+            </summary>
+        </member>
+        <member name="M:Wully.Events.BetterEvents.InvokePlayerGroundEvent(System.Boolean,UnityEngine.Vector3)">
+            <summary>
+            Invokes PlayerGroundEvent
+            </summary>
+            <param name="grounded"></param>
+            <param name="velocity"></param>
+        </member>
+        <member name="T:Wully.Events.BetterEvents.DeflectEvent">
+            <summary>
+            A creature deflects a spell event
+            </summary>
+            <param name="source"></param>
+            <param name="item"></param>
+            <param name="target"></param>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerDeflectedCreature">
+            <summary>
+            Player deflected a spell or projectile from a Creature
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnCreatureDeflectPlayer">
+            <summary>
+            Creature deflected a spell or projectile from the Player
+            </summary>
+        </member>
+        <member name="M:Wully.Events.BetterEvents.InvokeDeflectEvent(ThunderRoad.Creature,ThunderRoad.Item,ThunderRoad.Creature)">
+            <summary>
+            Triggers a deflect event
+            </summary>
+            <param name="source"></param>
+            <param name="item"></param>
+            <param name="target"></param>
+        </member>
+        <member name="T:Wully.Events.BetterEvents.DismemberEvent">
+            <summary>
+            Event for whenever a part of a creature is dismembered
+            </summary>
+            <param name="ragdollPart"></param>
+            <param name="creatureIsKilled"></param>
+            <param name="ragdollPartType"></param>
+            <param name="usingTelekinesis"></param>
+        </member>
+        <member name="M:Wully.Events.BetterEvents.InvokeDismemberEvent(ThunderRoad.RagdollPart,System.Boolean,ThunderRoad.RagdollPart.Type)">
+            <summary>
+            Triggers an event for whenever a part of a creature is dismembered
+            </summary>
+            <param name="ragdollPart"></param>
+            <param name="creatureIsKilled"></param>
+            <param name="ragdollPartType"></param>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnCreatureHit">
+            <summary>
+            A creature was hit, including player
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerHit">
+            <summary>
+            The player was hit
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerHitByCreature">
+            <summary>
+            The player was hit by a creature
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerHitSelf">
+            <summary>
+            The player hit themselves
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnCreatureHitByPlayer">
+            <summary>
+            A creature was hit by the player
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnCreatureHitByCreature">
+            <summary>
+            A creature was hit by another creature, possibly self
+            </summary>
+        </member>
+        <member name="M:Wully.Events.BetterEvents.InvokeCreatureHitEvent(Wully.Events.BetterHit)">
+            <summary>
+            Invokes CreatureHitEvent
+            </summary>
+            <param name="betterHit"></param>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnCreatureKill">
+            <summary>
+            A creature was killed, including player
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerKill">
+            <summary>
+            The player was killed
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerKillByCreature">
+            <summary>
+            The player was killed by a creature
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerKillSelf">
+            <summary>
+            The player killed themselves
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnCreatureKillByPlayer">
+            <summary>
+            A creature was killed by the player
+            </summary>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnCreatureKillByCreature">
+            <summary>
+            A creature was killed by another creature, possibly self
+            </summary>
+        </member>
+        <member name="M:Wully.Events.BetterEvents.InvokeCreatureKillEvent(Wully.Events.BetterHit)">
+            <summary>
+            Invokes CreatureKillEvent
+            </summary>
+            <param name="creature"></param>
+            <param name="player"></param>
+            <param name="collisionInstance"></param>
+            <param name="damageType"></param>
+            <param name="penetrationType"></param>
+            <param name="attackDirection"></param>
+            <param name="creatureStates"></param>
+            <param name="hitStates"></param>
+            <param name="damageArea"></param>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerCast">
+            <summary>
+            Called when player starts and stops casting a spell. eventType onStart/onStop is for casting start/stop
+            </summary>
+            <remarks>Use spellcaster.spellInstance.id to find out what spell it is</remarks>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerSpray">
+            <summary>
+             Called when player starts and stops spraying a spell. eventType onStart/onStop is for casting start/stop
+            </summary>
+            <remarks>Use spellcaster.spellInstance.id to find out what spell it is</remarks>
+        </member>
+        <member name="E:Wully.Events.BetterEvents.OnPlayerMerge">
+            <summary>
+            Called when player starts and stops merging a spell. eventType onStart/onStop is for casting start/stop
+            </summary>
+            <remarks>Use spellcaster.spellInstance.id to find out what spell it is</remarks>
+        </member>
+        <member name="T:Wully.Events.BetterEvents.DamageArea">
+            <summary>
+            The area where a collision hit
+            </summary>
+        </member>
+        <member name="T:Wully.Events.BetterEvents.Direction">
+            <summary>
+            The direction a collision hit from
+            </summary>
+        </member>
+        <member name="T:Wully.Events.BetterEvents.HitState">
+            <summary>
+            The multiple states a hit could be
+            </summary>
+        </member>
+        <member name="T:Wully.Events.BetterEvents.CreatureState">
+            <summary>
+            The multiple states a creature could be in
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Wully.Events.BetterHit" -->
+        <member name="T:Wully.Events.BetterItemEvents">
+            <summary>
+            This class provides a way to dynamically create better events for a specific Item
+            </summary>
+        </member>
+        <member name="T:Wully.Extensions.BetterExtensions">
+            <summary>
+            Class extensions for BAS
+            </summary>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.Size(System.String,System.Int32)">
+            <summary>
+            Returns string in html with size
+            </summary>
+            <param name="text"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.Italics(System.String)">
+            <summary>
+            Returns string in html italics
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.Bold(System.String)">
+            <summary>
+            Returns string in html bold
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.Color(System.String,UnityEngine.Color)">
+            <summary>
+            Returns string in html color
+            </summary>
+            <param name="text"></param>
+            <param name="color"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.IsPlayer(ThunderRoad.RagdollPart)">
+            <summary>
+            Returns true if the ragdoll part belongs to the player
+            </summary>
+            <param name="ragdollPart"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.ToStringExt(ThunderRoad.CollisionInstance)">
+            <summary>
+            Extended toString
+            </summary>
+            <param name="ci">CollisionInstance</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.GetRagdollPartFromSource(ThunderRoad.CollisionInstance)">
+            <summary>
+            Tries to return the ragdoll part if there is one on the sourceColliderGroup
+            </summary>
+            <param name="collisionInstance"></param>
+            <returns>Nullable ragdollPart from targetColliderGroup</returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.TryGetRagdollPartFromSource(ThunderRoad.CollisionInstance,ThunderRoad.RagdollPart@)">
+            <summary>
+            Tries to return the ragdoll part if there is one on the sourceColliderGroup
+            </summary>
+            <param name="collisionInstance"></param>
+            <param name="ragdollPart"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.GetRagdollPartFromTarget(ThunderRoad.CollisionInstance)">
+            <summary>
+            Tries to return the ragdoll part if there is one on the targetColliderGroup
+            </summary>
+            <param name="collisionInstance"></param>
+            <returns>Nullable ragdollPart from targetColliderGroup</returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.TryGetRagdollPartFromTarget(ThunderRoad.CollisionInstance,ThunderRoad.RagdollPart@)">
+            <summary>
+            Tries to return the ragdoll part if there is one on the targetColliderGroup
+            </summary>
+            <param name="collisionInstance"></param>
+            <param name="ragdollPart"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.GetRagdollPart(ThunderRoad.ColliderGroup)">
+            <summary>
+            Tries to return the ragdoll part if there is one on a collider group
+            </summary>
+            <param name="colliderGroup"></param>
+            <returns>Nullable ragdollPart from colliderGroup</returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.TryGetRagdollPart(ThunderRoad.ColliderGroup,ThunderRoad.RagdollPart@)">
+            <summary>
+            Tries to return the ragdoll part if there is one on a collider group
+            </summary>
+            <param name="colliderGroup"></param>
+            <param name="ragdollPart"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.GetItemFromSource(ThunderRoad.CollisionInstance)">
+            <summary>
+            Tries to return the item if there is one on the sourceColliderGroup
+            </summary>
+            <param name="collisionInstance"></param>
+            <returns>Nullable item from sourceColliderGroup</returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.TryGetItemFromSource(ThunderRoad.CollisionInstance,ThunderRoad.Item@)">
+            <summary>
+            Tries to return the item if there is one on the sourceColliderGroup
+            </summary>
+            <param name="collisionInstance"></param>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.GetItemFromTarget(ThunderRoad.CollisionInstance)">
+            <summary>
+            Tries to return the item if there is one on the targetColliderGroup
+            </summary>
+            <param name="collisionInstance"></param>
+            <returns>Nullable item from targetColliderGroup</returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.TryGetItemFromTarget(ThunderRoad.CollisionInstance,ThunderRoad.Item@)">
+            <summary>
+            Tries to return the item if there is one on the targetColliderGroup
+            </summary>
+            <param name="collisionInstance"></param>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.GetItem(ThunderRoad.ColliderGroup)">
+            <summary>
+            Returns the item if there is one on a collider group
+            </summary>
+            <param name="colliderGroup"></param>
+            <returns>Nullable item from colliderGroup</returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.TryGetItem(ThunderRoad.ColliderGroup,ThunderRoad.Item@)">
+            <summary>
+            Tries to return the item if there is one on a collider group
+            </summary>
+            <param name="colliderGroup"></param>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.IsOnlyPlayerHolding(ThunderRoad.Handle)">
+            <summary>
+            Returns true if only the player is holding the handle
+            </summary>
+            <param name="handle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.IsOnlyPlayerHolding(ThunderRoad.Item)">
+            <summary>
+            Returns true if only the player is holding the item
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.IsOnlyCreatureExceptPlayerHolding(ThunderRoad.Item)">
+            <summary>
+            Returns true if a creature other than the player is holding the item
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.IsOnlyCreatureExceptPlayerHolding(ThunderRoad.Handle)">
+            <summary>
+            Returns true ifa creature other than the player is holding the handle
+            </summary>
+            <param name="handle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.IsPlayerTkHolding(ThunderRoad.RagdollPart)">
+            <summary>
+            Returns true if the player is TK holding the ragdollPart
+            </summary>
+            <param name="ragdollPart"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.IsPlayerTkHolding(ThunderRoad.Item)">
+            <summary>
+            Returns true if the player is TK holding the item
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.IsPlayerTkHolding(ThunderRoad.Handle)">
+            <summary>
+            Returns true if the player is TK holding the handle
+            </summary>
+            <param name="handle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.IsPlayerHolding(ThunderRoad.RagdollPart)">
+            <summary>
+            Returns true if the player is holding the RagdollPart
+            </summary>
+            <param name="ragdollPart"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.IsPlayerHolding(ThunderRoad.Item)">
+            <summary>
+            Returns true if the player is holding the item
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.IsPlayerHolding(ThunderRoad.Handle)">
+            <summary>
+            Returns true if the player is holding the handle
+            </summary>
+            <param name="handle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.TryGetPlayerHandHolding(ThunderRoad.Item,ThunderRoad.RagdollHand@)">
+            <summary>
+            Tries to return the players hand which is holding the item
+            </summary>
+            <param name="item">item being held</param>
+            <param name="ragdollHand">Players left or right hand</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.GetPlayerHandHolding(ThunderRoad.Item,ThunderRoad.RagdollHand@)">
+            <summary>
+            Tries to return the players hand which is holding the handle
+            </summary>
+            <param name="item">item being held</param>
+            <param name="ragdollHand">Players left or right hand</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.TryGetPlayerHandHolding(ThunderRoad.Handle,ThunderRoad.RagdollHand@)">
+            <summary>
+            Tries to return the players hand which is holding the handle
+            </summary>
+            <param name="handle">handle being held</param>
+            <param name="ragdollHand">Players left or right hand</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.GetPlayerHandHolding(ThunderRoad.Handle,ThunderRoad.RagdollHand@)">
+            <summary>
+            Tries to return the players hand which is holding the handle
+            </summary>
+            <param name="handle">handle being held</param>
+            <param name="ragdollHand">Players left or right hand</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.Disarm(ThunderRoad.Creature)">
+            <summary>
+            Disarms creature on both hands
+            </summary>
+            <param name="creature"></param>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.Disarm(ThunderRoad.Creature,ThunderRoad.Side)">
+            <summary>
+            Disarms creature on a particular side
+            </summary>
+            <param name="creature"></param>
+            <param name="side"></param>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.IsArmed(ThunderRoad.Creature)">
+            <summary>
+            Returns true if the creature is holding something
+            </summary>
+            <param name="creature"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.IsArmed(ThunderRoad.Creature,ThunderRoad.Side)">
+            <summary>
+            Returns true if the creature is holding something in a particular side
+            </summary>
+            <param name="creature"></param>
+            <param name="side"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.IsGrabbingHandle(ThunderRoad.Creature)">
+            <summary>
+            Returns true if the creature is holding something
+            </summary>
+            <param name="creature"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.IsGrabbingHandle(ThunderRoad.Creature,ThunderRoad.Side)">
+            <summary>
+            Returns true if the creature is holding something in a particular side
+            </summary>
+            <param name="creature"></param>
+            <param name="side"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.AllowCollisionWith(ThunderRoad.Item,ThunderRoad.Item)">
+            <summary>
+            Will make an item's colliders collide with another item's colliders
+            </summary>
+            <param name="item"></param>
+            <param name="otherItem"></param>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.AllowCollisionWith(ThunderRoad.Item,UnityEngine.Collider)">
+            <summary>
+            Will make an item's colliders collide with a specific collider
+            </summary>
+            <param name="item"></param>
+            <param name="collider"></param>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.IgnoreCollisionWith(ThunderRoad.Item,ThunderRoad.Item)">
+            <summary>
+            Will make an item's colliders not collide with another item's colliders
+            </summary>
+            <param name="item"></param>
+            <param name="otherItem"></param>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.IgnoreCollisionWith(ThunderRoad.Item,UnityEngine.Collider)">
+            <summary>
+            Will make an item's colliders not collide with a specific collider
+            </summary>
+            <param name="item"></param>
+            <param name="collider"></param>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.TryGetTkHandle(ThunderRoad.SpellCaster,ThunderRoad.Handle@)">
+            <summary>
+            Tries to return the handle the spellcaster is currently holding with telekinesis
+            </summary>
+            <param name="spellCaster">side specific spellcaster</param>
+            <param name="handle">The handle held by the spellcaster with telekinesis</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.TryGetRagdollHand(ThunderRoad.Creature,ThunderRoad.Side,ThunderRoad.RagdollHand@)">
+            <summary>
+            Tries to return the Ragdoll hand for a creatures Side
+            </summary>
+            <param name="creature"></param>
+            <param name="side"></param>
+            <param name="ragdollHand"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.TryGetRagdollHand(ThunderRoad.Creature,ThunderRoad.RagdollHand@,ThunderRoad.RagdollHand@)">
+            <summary>
+            Tries to return both ragdoll hands for a creature
+            </summary>
+            <param name="creature"></param>
+            <param name="leftRagdollHand"></param>
+            <param name="rightRagdollHand"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.TryGetHeldItem(ThunderRoad.Creature,ThunderRoad.Side,ThunderRoad.Item@)">
+            <summary>
+            Tries to get the item a creature is holding on a particular side
+            </summary>
+            <param name="creature"></param>
+            <param name="side"></param>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.TryGetHeldItem(ThunderRoad.RagdollHand,ThunderRoad.Item@)">
+            <summary>
+            Tries to get the item a ragdollhand is holding
+            </summary>
+            <param name="ragdollHand"></param>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.TryGetHeldItem(ThunderRoad.SpellCaster,ThunderRoad.Item@)">
+            <summary>
+            Tries to get the item a spellcaster is holding
+            </summary>
+            <param name="spellCaster"></param>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.IsBeingChoked(ThunderRoad.Creature)">
+            <summary>
+            Checks to see if the ragdoll is being choked
+            </summary>
+            <param name="creature"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.WasBeingChoked(ThunderRoad.Creature)">
+            <summary>
+            Checks to see if the ragdoll was being choked and is now dead
+            </summary>
+            <param name="creature"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.IsHandleChoked(ThunderRoad.Handle)">
+            <summary>
+            Check if handle is being choked
+            </summary>
+            <param name="handle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Extensions.BetterExtensions.LineNumber(System.Exception)">
+            <summary>
+            Tries to get the line number of an exception. May impact performance
+            </summary>
+            <param name="ex"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Wully.Helpers.BetterHelpers">
+            <summary>
+            A collection of helper methods
+            </summary>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.IsNotHeld(ThunderRoad.Item)">
+            <summary>
+            Returns true if the item isnt being held
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.IsLastHeldByCreatureExceptPlayer(ThunderRoad.Item)">
+            <summary>
+            Returns true if the items last holder was a creature but not the player
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.IsLastHeldByPlayer(ThunderRoad.Item)">
+            <summary>
+            Returns true if the items last holder was the player
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.IsOnlyPlayerHolding(ThunderRoad.Handle)">
+            <summary>
+            Returns true if only the player is holding the handle
+            </summary>
+            <param name="handle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.IsOnlyPlayerHolding(ThunderRoad.Item)">
+            <summary>
+            Returns true if only the player is holding the item
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.IsPlayer(ThunderRoad.RagdollPart)">
+            <summary>
+            Returns true if ragdollPart is the player
+            </summary>
+            <param name="ragdollPart"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.TryGetObjFromColliderGroup(ThunderRoad.ColliderGroup,ThunderRoad.Item@)">
+            <summary>
+            Tries to return the item if there is one on a collider group
+            </summary>
+            <param name="colliderGroup"></param>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.TryGetObjFromColliderGroup(ThunderRoad.ColliderGroup,ThunderRoad.RagdollPart@)">
+            <summary>
+            Tries to return the ragdoll part if there is one on a collider group
+            </summary>
+            <param name="colliderGroup"></param>
+            <param name="ragdollPart"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.IsOnlyCreatureExceptPlayerHolding(ThunderRoad.Item)">
+            <summary>
+            Returns true if a creature other than the player is holding the item
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.IsOnlyCreatureExceptPlayerHolding(ThunderRoad.Handle)">
+            <summary>
+            Returns true if a creature other than the player is holding the handle
+            </summary>
+            <param name="handle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.IsPlayerTkHolding(ThunderRoad.RagdollPart)">
+            <summary>
+            Returns true if the player is TK holding the ragdollPart
+            </summary>
+            <param name="ragdollPart"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.IsPlayerTkHolding(ThunderRoad.Item)">
+            <summary>
+            Returns true if the player is TK holding the item
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.IsPlayerTkHolding(ThunderRoad.Handle)">
+            <summary>
+            Returns true if the player is TK holding the handle
+            </summary>
+            <param name="handle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.IsPlayerHolding(ThunderRoad.RagdollPart)">
+            <summary>
+            Returns true if the player is holding the ragdollPart
+            </summary>
+            <param name="ragdollPart"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.IsPlayerHolding(ThunderRoad.Item)">
+            <summary>
+            Returns true if the player is holding the item
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.IsPlayerHolding(ThunderRoad.Handle)">
+            <summary>
+            Returns true if the player is holding the handle
+            </summary>
+            <param name="handle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.TryGetPlayerHandHolding(ThunderRoad.Item,ThunderRoad.RagdollHand@)">
+            <summary>
+            Tries to return the players hand which is holding a item
+            </summary>
+            <param name="item">Item being held</param>
+            <param name="ragdollHand">Players left or right hand</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.TryGetPlayerHandHolding(ThunderRoad.Handle,ThunderRoad.RagdollHand@)">
+            <summary>
+            Tries to return the players hand which is holding the handle
+            </summary>
+            <param name="handle">handle being held</param>
+            <param name="ragdollHand">Players left or right hand</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.GetItemDataIdList(ThunderRoad.ItemData.Type)">
+            <summary>
+            Get a list of item Ids's for a particular ItemData type
+            </summary>
+            <param name="type">ItemData type, such as Weapon, Spell, Shield</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.GetItemDataList">
+            <summary>
+            Get a list of ItemData
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.GetItemDataList(ThunderRoad.ItemData.Type)">
+            <summary>
+            Get a list of ItemData's for a particular ItemData type
+            </summary>
+            <param name="type">ItemData type, such as Weapon, Spell, Shield</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.IsPlayerPointingAtBook">
+            <summary>
+            Returns true if the player is currently pointing at a book menu
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.DisarmCreature(ThunderRoad.Creature)">
+            <summary>
+            Make a creature drop whatever they are holding
+            </summary>
+            <param name="creature"></param>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.DisarmCreature(ThunderRoad.Creature,ThunderRoad.Side)">
+            <summary>
+            Make a creature drop whatever they are holding in a particular side
+            </summary>
+            <param name="creature"></param>
+            <param name="side"></param>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.IsCreatureArmed(ThunderRoad.Creature)">
+            <summary>
+            Returns true if the creature is holding something
+            </summary>
+            <param name="creature"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.IsCreatureArmed(ThunderRoad.Creature,ThunderRoad.Side)">
+            <summary>
+            Returns true if the creature is holding something in a particular side
+            </summary>
+            <param name="creature"></param>
+            <param name="side"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.IsCreatureGrabbingHandle(ThunderRoad.Creature)">
+            <summary>
+            Returns true if the creature is holding something
+            </summary>
+            <param name="creature"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.IsCreatureGrabbingHandle(ThunderRoad.Creature,ThunderRoad.Side)">
+            <summary>
+            Returns true if the creature is holding something in a particular side
+            </summary>
+            <param name="creature"></param>
+            <param name="side"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.MakeItemCollideWith(ThunderRoad.Item,ThunderRoad.Item)">
+            <summary>
+            Will make an item's colliders collide with another item's colliders
+            </summary>
+            <param name="item"></param>
+            <param name="otherItem"></param>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.MakeItemCollideWith(ThunderRoad.Item,UnityEngine.Collider)">
+            <summary>
+            Will make an item's colliders collide with a specific collider
+            </summary>
+            <param name="item"></param>
+            <param name="otherCollider"></param>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.MakeItemNotCollideWith(ThunderRoad.Item,ThunderRoad.Item)">
+            <summary>
+            Will make an item's colliders ignore collisions with another items colliders
+            </summary>
+            <param name="item"></param>
+            <param name="otherItem"></param>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.MakeItemNotCollideWith(ThunderRoad.Item,UnityEngine.Collider)">
+            <summary>
+            Will make an item's colliders ignore collisions with a specific collider
+            </summary>
+            <param name="item"></param>
+            <param name="otherCollider"></param>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.IsGripOrCastPressed">
+            <summary>
+            returns true if grip button or cast button is being pressed on any controller side
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.IsGripOrCastPressed(ThunderRoad.Side)">
+            <summary>
+            returns true if grip button or cast button is being pressed on a controller side
+            </summary>
+            <param name="side"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.IsGripAndCastPressed">
+            <summary>
+            returns true if grip button and cast button is being pressed on any controller side
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.IsGripAndCastPressed(ThunderRoad.Side)">
+            <summary>
+            returns true if grip button and cast button is being pressed on a controller side
+            </summary>
+            <param name="side"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.IsGripPressed">
+            <summary>
+            returns true if grip button is being pressed on any controller
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.IsGripPressed(ThunderRoad.Side)">
+            <summary>
+            returns true if grip button is being pressed on a controller side
+            </summary>
+            <param name="side"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.IsCastPressed">
+            <summary>
+            returns true if cast button is being pressed on any controller
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.IsCastPressed(ThunderRoad.Side)">
+            <summary>
+            returns true if cast button is being pressed on controller side
+            </summary>
+            <param name="side"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.IsAlternateUsePressed">
+            <summary>
+            returns true if alternate use button is being pressed on any controller
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.IsAlternateUsePressed(ThunderRoad.Side)">
+            <summary>
+            returns true if alternate use button is being pressed on controller side
+            </summary>
+            <param name="side"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.TryGetTelekinesisCaughtHandle(ThunderRoad.SpellCaster,ThunderRoad.Handle@)">
+            <summary>
+            Tries to return the handle the spellcaster is currently holding with telekinesis
+            </summary>
+            <param name="spellCaster">side specific spellcaster</param>
+            <param name="handle">The handle held by the spellcaster with telekinesis</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.TryGetRagdollHand(ThunderRoad.Creature,ThunderRoad.Side,ThunderRoad.RagdollHand@)">
+            <summary>
+            Tries to return the Ragdoll hand for a creatures Side
+            </summary>
+            <param name="creature"></param>
+            <param name="side"></param>
+            <param name="ragdollHand"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.TryGetRagdollHand(ThunderRoad.Creature,ThunderRoad.RagdollHand@,ThunderRoad.RagdollHand@)">
+            <summary>
+            Tries to return both ragdoll hands for a creature
+            </summary>
+            <param name="creature"></param>
+            <param name="leftRagdollHand"></param>
+            <param name="rightRagdollHand"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.TryGetHeldItem(ThunderRoad.Creature,ThunderRoad.Side,ThunderRoad.Item@)">
+            <summary>
+            Tries to get the item a creature is holding on a particular side
+            </summary>
+            <param name="creature"></param>
+            <param name="side"></param>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.TryGetHeldItem(ThunderRoad.RagdollHand,ThunderRoad.Item@)">
+            <summary>
+            Tries to get the item a ragdollhand is holding
+            </summary>
+            <param name="ragdollHand"></param>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.TryGetHeldItem(ThunderRoad.SpellCaster,ThunderRoad.Item@)">
+            <summary>
+            Tries to get the item a spellcaster is holding
+            </summary>
+            <param name="spellCaster"></param>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.TryGetLevelModuleBetterEvents(Wully.Module.LevelModuleBetterEvents@)">
+            <summary>
+            Helper method to Try and get the current instance of the BetterEvents levelmodule
+            </summary>
+            <param name="levelModuleBetterEvents"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.IsPlayerUsingTelekinesis">
+            <summary>
+            Returns true if player using TK in any hand
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.IsPlayerUsingTelekinesis(ThunderRoad.Side)">
+            <summary>
+            Returns true if player using TK for given hand side
+            </summary>
+            <param name="side"></param>
+            <returns></returns>
+            <remarks>This actually checks if the player is holding something with TK</remarks>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.TryGetChokedHandle(ThunderRoad.Creature,ThunderRoad.HandleRagdoll@)">
+            <summary>
+            Checks to see if the ragdoll is being choked
+            </summary>
+            <param name="creature"></param>
+            <param name="chokedHandleRagdoll"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.IsBeingChoked(ThunderRoad.Creature)">
+            <summary>
+            Checks to see if the ragdoll is being choked
+            </summary>
+            <param name="creature"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.WasBeingChoked(ThunderRoad.Creature)">
+            <summary>
+            Checks to see if the ragdoll was being choked and is now dead
+            </summary>
+            <param name="creature"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.IsHandleChoked(ThunderRoad.Handle)">
+            <summary>
+            Check if handle is being choked
+            </summary>
+            <param name="handle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.IsHandleChokeable(ThunderRoad.Handle)">
+            <summary>
+            Check if a specific handle is chokable
+            </summary>
+            <param name="handle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Helpers.BetterHelpers.IsHandleChokeable(ThunderRoad.HandleRagdoll)">
+            <summary>
+            Check if a specific HandleRagdoll is chokable
+            </summary>
+            <param name="handle"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Wully.Helpers.BetterLogger">
+            <summary>
+            A simple wrapper around Unity.DebugLog to make it easier to configure logs
+            </summary>
+        </member>
+        <member name="M:Wully.Helpers.BetterLogger.SetLogFullNameSpace(System.Boolean)">
+            <summary>
+            Enables or disables including the full class name in the log file
+            </summary>
+            <param name="enable"></param>
+        </member>
+        <member name="M:Wully.Helpers.BetterLogger.SetLoggingLevel(Wully.Helpers.BetterLogger.LogLevel)">
+            <summary>
+            Sets the logging loggingLevel for this logger instance
+            </summary>
+            <param name="logLevel"></param>
+        </member>
+        <member name="M:Wully.Helpers.BetterLogger.ToggleLogging">
+            <summary>
+            Toggles Logging on or off
+            </summary>
+        </member>
+        <member name="M:Wully.Helpers.BetterLogger.EnableLogging">
+            <summary>
+            Enables Logging
+            </summary>
+        </member>
+        <member name="M:Wully.Helpers.BetterLogger.DisableLogging">
+            <summary>
+            Disables Logging
+            </summary>
+        </member>
+        <member name="M:Wully.Helpers.BetterLogger.GetLogger(System.Type)">
+            <summary>
+            Gets a new instance of BetterLogger
+            </summary>
+            <param name="classType"></param>
+            <returns>Instance of BetterLogger</returns>.
+        </member>
+        <member name="T:Wully.Helpers.BetterLogger.LogLevel">
+            <summary>
+            Log Levels
+            </summary>
+        </member>
+        <member name="T:Wully.Helpers.FluentLogger">
+            <summary>
+            A fluent class for wrapping callerMemberName and lineNumbers, giving more detailed information in logs
+            </summary>
+        </member>
+        <member name="M:Wully.Helpers.FluentLogger.Message(System.String,System.Object[])">
+            <summary>
+            Log message text
+            </summary>
+            <param name="message"></param>
+            <param name="messageArgs"></param>
+        </member>
+        <member name="M:Wully.Helpers.FluentLogger.ConvertToHtml(UnityEngine.Color,System.String)">
+            <summary>
+            Convert colour to html string
+            </summary>
+            <param name="color"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Wully.Module.LevelModuleBetterDependencies.enableLogging">
+            <summary>
+            Enable/Disable Better Logging for BetterEvents
+            </summary>
+        </member>
+        <member name="F:Wully.Module.LevelModuleBetterDependencies.logLevel">
+            <summary>
+            Set the GetLogLevel for BetterEvents
+            </summary>
+        </member>
+        <member name="M:Wully.Module.LevelModuleBetterDependencies.OnLoadCoroutine(ThunderRoad.Level)">
+            <summary>
+            Called when a level is loaded
+            </summary>
+            <param name="level"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Wully.Module.LevelModuleBetterEvents">
+            <summary>
+            LevelModule which monitors, tracks and invokes events with rich data
+            </summary>
+        </member>
+        <member name="F:Wully.Module.LevelModuleBetterEvents.enableLogging">
+            <summary>
+            Enable/Disable Better Logging for BetterEvents
+            </summary>
+        </member>
+        <member name="F:Wully.Module.LevelModuleBetterEvents.logLevel">
+            <summary>
+            Set the GetLogLevel for BetterEvents
+            </summary>
+        </member>
+        <member name="F:Wully.Module.LevelModuleBetterEvents.local">
+            <summary>
+            Local static reference to the currently loaded BetterEvents level module
+            </summary>
+        </member>
+        <member name="F:Wully.Module.LevelModuleBetterEvents.currentLevel">
+            <summary>
+            Current level the game is on
+            </summary>
+        </member>
+        <member name="F:Wully.Module.LevelModuleBetterEvents.levelModuleWave">
+            <summary>
+            Currently loaded Wave levelmodule
+            </summary>
+            <remarks>nullable</remarks>
+        </member>
+        <member name="F:Wully.Module.LevelModuleBetterEvents.spellCasterLeft">
+            <summary>
+            Players left spellcaster
+            </summary>
+        </member>
+        <member name="P:Wully.Module.LevelModuleBetterEvents.SpellCasterLeftGrabbedHandle">
+            <summary>
+            Returns the players left telekinesis grabbed handle
+            </summary>
+        </member>
+        <member name="F:Wully.Module.LevelModuleBetterEvents.spellCasterRight">
+            <summary>
+            Players right spellcaster
+            </summary>
+        </member>
+        <member name="P:Wully.Module.LevelModuleBetterEvents.SpellCasterRightGrabbedHandle">
+            <summary>
+            Returns the players right telekinesis grabbed handle
+            </summary>
+        </member>
+        <member name="M:Wully.Module.LevelModuleBetterEvents.OnLoadCoroutine(ThunderRoad.Level)">
+            <summary>
+            Called when a level is loaded
+            </summary>
+            <param name="level"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Module.LevelModuleBetterEvents.Update(ThunderRoad.Level)">
+            <summary>
+            Called every frame
+            </summary>
+            <param name="level"></param>
+        </member>
+        <member name="M:Wully.Module.LevelModuleBetterEvents.TkCaughtHandle(ThunderRoad.Handle,ThunderRoad.Side)">
+            <summary>
+            Called when the player TK grabbed something
+            </summary>
+            <param name="handle"></param>
+            <param name="side"></param>
+        </member>
+        <member name="M:Wully.Module.LevelModuleBetterEvents.MonitorCast(ThunderRoad.SpellCaster,ThunderRoad.Side)">
+            <summary>
+            This function monitors when the player casts spells and fires one off events when the player starts/stops casting
+            </summary>
+            <param name="spellCaster"></param>
+            <param name="side"></param>
+        </member>
+        <member name="M:Wully.Module.LevelModuleBetterEvents.MonitorTk(ThunderRoad.SpellCaster,ThunderRoad.Side,ThunderRoad.Handle@)">
+            <summary>
+            Continually checks if the player has grabbed something with Telekinesis and updates a handle reference
+            </summary>
+            <param name="spellCaster"></param>
+            <param name="side"></param>
+            <param name="handle"></param>
+        </member>
+        <member name="M:Wully.Module.LevelModuleBetterEvents.Locomotion_OnGroundEvent(System.Boolean,UnityEngine.Vector3)">
+            <summary>
+            Called when player locomotion is on ground
+            </summary>
+            <param name="grounded"></param>
+            <param name="velocity"></param>
+        </member>
+        <member name="M:Wully.Module.LevelModuleBetterEvents.SubscribeToRagdollSlice(ThunderRoad.RagdollPart)">
+            <summary>
+            Used to listen to a ragdoll parts slice events
+            </summary>
+            <param name="ragdollPart"></param>
+        </member>
+        <member name="M:Wully.Module.LevelModuleBetterEvents.Hand_OnUnGrabEvent(ThunderRoad.Side,ThunderRoad.Handle,System.Boolean,ThunderRoad.EventTime)">
+            <summary>
+            Called when the players hand stops grabbing or TK grabbing something
+            </summary>
+            <param name="side"></param>
+            <param name="handle"></param>
+            <param name="throwing"></param>
+            <param name="eventTime"></param>
+        </member>
+        <member name="M:Wully.Module.LevelModuleBetterEvents.Hand_OnGrabEvent(ThunderRoad.Side,ThunderRoad.Handle,System.Single,ThunderRoad.HandleOrientation,ThunderRoad.EventTime)">
+            <summary>
+            Called wh en the players hand grabs or TK grabs something
+            </summary>
+            <param name="side"></param>
+            <param name="handle"></param>
+            <param name="axisPosition"></param>
+            <param name="orientation"></param>
+            <param name="eventTime"></param>
+        </member>
+        <member name="M:Wully.Module.LevelModuleBetterEvents.SubscribeToHandleColliders(ThunderRoad.Handle)">
+            <summary>
+            Subscribes to the handles colliders OnCollisionStartEvent
+            </summary>
+            <param name="handle"></param>
+        </member>
+        <member name="M:Wully.Module.LevelModuleBetterEvents.UnsubscribeToHandleColliders(ThunderRoad.Handle)">
+            <summary>
+            Unsubscribes to a handles colliders OnCollisionStartEvent
+            </summary>
+            <param name="handle"></param>
+        </member>
+        <member name="M:Wully.Module.LevelModuleBetterEvents.PlayerItemFootHand_OnCollisionStartEvent(ThunderRoad.CollisionInstance)">
+            <summary>
+            This is called when the players grabbed, TKed item or fists has begun touching another rigidbody/collider
+            </summary>
+            <param name="collisionInstance"></param>
+        </member>
+        <member name="M:Wully.Module.LevelModuleBetterEvents.OnCreatureHeal(ThunderRoad.Creature,System.Single,ThunderRoad.Creature)">
+            <summary>
+            Called when a creature is healed
+            </summary>
+            <param name="creature"></param>
+            <param name="heal"></param>
+            <param name="healer"></param>
+            public virtual void OnCreatureHeal( Creature creature, float heal, Creature healer )
+            <remarks>private for now, since the base game event is fine as it is</remarks>
+        </member>
+        <member name="M:Wully.Module.LevelModuleBetterEvents.OnUnload(ThunderRoad.Level)">
+            <summary>
+            Called when the current level is unloaded
+            </summary>
+            <param name="level"></param>
+        </member>
+        <member name="M:Wully.Module.LevelModuleBetterEvents.Ragdoll_OnSliceEvent(ThunderRoad.RagdollPart,ThunderRoad.EventTime)">
+            <summary>
+            Called when a ragdoll part is sliced
+            </summary>
+            <param name="ragdollPart"></param>
+            <param name="eventTime"></param>
+        </member>
+        <member name="M:Wully.Module.LevelModuleBetterEvents.OnDeflectEvent(ThunderRoad.Creature,ThunderRoad.Item,ThunderRoad.Creature)">
+            <summary>
+            Called when a spell is deflected
+            </summary>
+            <param name="source"></param>
+            <param name="item"></param>
+            <param name="target"></param>
+        </member>
+        <member name="M:Wully.Module.LevelModuleBetterEvents.OnCreatureParry(ThunderRoad.Creature,ThunderRoad.CollisionInstance)">
+            <summary>
+            Called when a creature parrys
+            </summary>
+            <param name="creature"></param>
+            <param name="collisionInstance"></param>
+        </member>
+        <member name="M:Wully.Module.LevelModuleBetterEvents.OnCreatureKill(ThunderRoad.Creature,ThunderRoad.Player,ThunderRoad.CollisionInstance,ThunderRoad.EventTime)">
+            <summary>
+            Called when a creature is killed
+            </summary>
+            <param name="creature"></param>
+            <param name="player"></param>
+            <param name="collisionInstance"></param>
+            <param name="eventTime"></param>
+        </member>
+        <member name="M:Wully.Module.LevelModuleBetterEvents.OnCreatureHit(ThunderRoad.Creature,ThunderRoad.CollisionInstance)">
+            <summary>
+            Called when a creature is hit
+            </summary>
+            <param name="creature"></param>
+            <param name="collisionInstance"></param>
+            <remarks>A hit is different from a collision, many collisions can happen in a small time but will probably only be 1 hit</remarks>
+        </member>
+        <member name="M:Wully.Module.LevelModuleBetterEvents.GetDamageArea(ThunderRoad.Creature,ThunderRoad.CollisionInstance)">
+            <summary>
+            The area that was hit, head/neck/body etc
+            </summary>
+            <param name="creature"></param>
+            <param name="collisionInstance"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Module.LevelModuleBetterEvents.GetDamageType(ThunderRoad.CollisionInstance)">
+            <summary>
+            The type of damage, stabbing, blunt, energy, shock etc
+            </summary>
+            <param name="collisionInstance"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Module.LevelModuleBetterEvents.GetPenetrationType(ThunderRoad.CollisionInstance)">
+            <summary>
+            The type of penetration
+            </summary>
+            <param name="collisionInstance"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Module.LevelModuleBetterEvents.GetHitStates(ThunderRoad.CollisionInstance)">
+            <summary>
+            Returns a collection of various states a hit could be
+            </summary>
+            <param name="collisionInstance"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wully.Module.LevelModuleBetterEvents.GetHitDirection(ThunderRoad.Creature,ThunderRoad.CollisionInstance)">
+            <summary>
+            Returns the direction a creature was hit, ie Direction.back is backstabbed
+            </summary>
+            <param name="creature"></param>
+            <param name="collisionInstance"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Wully.Module.LevelModuleMasterLevel.enableLogging">
+            <summary>
+            Enable/Disable Better Logging for BetterEvents
+            </summary>
+        </member>
+        <member name="F:Wully.Module.LevelModuleMasterLevel.logLevel">
+            <summary>
+            Set the GetLogLevel for BetterEvents
+            </summary>
+        </member>
+        <member name="F:Wully.Module.LevelModuleMasterLevel.local">
+            <summary>
+            Local static reference to the currently loaded BetterMods level module
+            </summary>
+        </member>
+        <member name="F:Wully.Module.LevelModuleGlobalItemModule.enableLogging">
+            <summary>
+            Enable/Disable Better Logging for BetterEvents
+            </summary>
+        </member>
+        <member name="F:Wully.Module.LevelModuleGlobalItemModule.logLevel">
+            <summary>
+            Set the GetLogLevel for BetterEvents
+            </summary>
+        </member>
+        <member name="F:Wully.Module.LevelModuleGlobalItemModule.local">
+            <summary>
+            Local static reference to the currently loaded BetterMods level module
+            </summary>
+        </member>
+        <member name="T:Wully.Examples.PlayerKillWithItem">
+            <summary>
+            This is an example showing how to track if a player killed a creature with a certain item
+            </summary>
+        </member>
+    </members>
+</doc>

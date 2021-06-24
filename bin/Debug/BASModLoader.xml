@@ -1,0 +1,368 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BASModLoader</name>
+    </assembly>
+    <members>
+        <member name="T:ModLoader.AssetHelper">
+            <summary>
+            A set of methods for loading assets.
+            </summary>
+        </member>
+        <member name="M:ModLoader.AssetHelper.GetAudioClipFromBytes(System.Byte[],System.Boolean)">
+            <summary>
+            Creates an <see cref="T:UnityEngine.AudioClip"/> from an array of <see cref="T:System.Byte"/> containing audio data in WAV or OGG format.
+            </summary>
+            <param name="data">The audio data. Must be in WAV or OGG format.</param>
+            <param name="threeD">Whether the clip should be 3D or 2D.</param>
+            <returns>An instance of <see cref="T:UnityEngine.AudioClip"/> representing the audio.</returns>
+            <exception cref="T:System.ArgumentException">Thrown if the specified byte array does not represent supported audio data.</exception>
+        </member>
+        <member name="M:ModLoader.AssetHelper.GetAudioClipFromFile(System.String,System.Boolean)">
+            <summary>
+            Creates an <see cref="T:UnityEngine.AudioClip" /> from a file in WAV or OGG format.
+            </summary>
+            <param name="path">The path.</param>
+            <param name="threeD">Whether the clip should be 3D or 2D.</param>
+            <returns>An instance of <see cref="T:UnityEngine.AudioClip" /> representing the audio.</returns>
+            <exception cref="T:System.ArgumentException">Thrown if the specified file is not in a supported audio format.</exception>
+        </member>
+        <member name="M:ModLoader.AssetHelper.GetTextureFromBytes(System.Byte[])">
+            <summary>
+            Creates a <see cref="T:UnityEngine.Texture2D"/> from an array of <see cref="T:System.Byte"/> containing texture data.
+            </summary>
+            <param name="data">The texture data.</param>
+            <returns>An instance of <see cref="T:UnityEngine.Texture2D"/> representing the texture.</returns>
+            <exception cref="T:System.ArgumentException">Thrown if the specified byte array does not represent supported texture data.</exception>
+        </member>
+        <member name="M:ModLoader.AssetHelper.GetTextureFromFile(System.String)">
+            <summary>
+            Creates a <see cref="T:UnityEngine.Texture2D"/> from a file containing texture data.
+            </summary>
+            <param name="data">The texture data.</param>
+            <exception cref="T:System.ArgumentException">Thrown if the specified file does not contain supported texture data.</exception>
+        </member>
+        <member name="T:ModLoader.Attributes.ModEntryPointAttribute">
+            <summary>
+            Marks the entry point of a mod, if any. This class cannot be inherited.
+            Implements the <see cref="T:System.Attribute" />
+            </summary>
+            <seealso cref="T:System.Attribute" />
+        </member>
+        <member name="M:ModLoader.Attributes.ModEntryPointAttribute.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ModLoader.Attributes.ModEntryPointAttribute"/> class.
+            </summary>
+        </member>
+        <member name="T:ModLoader.Attributes.ModExitPointAttribute">
+            <summary>
+            Marks the exit point of a mod, if any. This class cannot be inherited.
+            Implements the <see cref="T:System.Attribute" />
+            </summary>
+            <seealso cref="T:System.Attribute" />
+        </member>
+        <member name="M:ModLoader.Attributes.ModExitPointAttribute.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ModLoader.Attributes.ModExitPointAttribute"/> class.
+            </summary>
+        </member>
+        <member name="T:ModLoader.Attributes.ModSettingAttribute">
+            <summary>
+            An attribute for marking fields in a class extending from <see cref="T:ModLoader.ModSettings"/>. This class cannot be inherited.
+            </summary>
+            <seealso cref="T:System.Attribute" />
+        </member>
+        <member name="T:ModLoader.BundleManager">
+            <summary>
+            <para>Manages bundles for mods.</para>
+            <para>You should always use this class to load bundles. It'll allow Mod Loader to automatically manage them, and unload them when your mod is reloaded, etc.</para>
+            <para>To reduce conflicts, mod bundles are isolated. You can only load bundles loaded by your own mod. This means that if two different mods both have a bundle named Sounds, they won't conflict.</para>
+            </summary>
+        </member>
+        <member name="M:ModLoader.BundleManager.Load(System.String,System.String)">
+            <summary>
+            Loads a bundle from the specified path, giving it the provided name. The name must be unique within your mod.
+            </summary>
+            <param name="bundleName">The name of the bundle.</param>
+            <returns>An instance of <see cref="T:UnityEngine.AssetBundle" /> representing the loaded bundle, or <c>null</c> if the bundle was not loaded.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="bundleName" /> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="path" /> is <c>null</c>.</exception>
+        </member>
+        <member name="M:ModLoader.BundleManager.Load(System.String,System.Byte[])">
+            <summary>
+            Loads a bundle from the specified byte array, giving it the provided name. The name must be unique within your mod.
+            </summary>
+            <param name="bundleName">The name of the bundle.</param>
+            <returns>An instance of <see cref="T:UnityEngine.AssetBundle" /> representing the loaded bundle, or <c>null</c> if the bundle was not loaded.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="bundleName" /> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="data" /> is <c>null</c>.</exception>
+        </member>
+        <member name="M:ModLoader.BundleManager.Unload(System.String)">
+            <summary>
+            <para>Unloads the bundle with the specified name. You can only unload bundles loaded by you.</para>
+            <para>It's not necessary to unload bundles manually when your mod is unloaded. Mod Loader will do that automatically, granted it was loaded through <see cref="T:ModLoader.BundleManager"/>.</para>
+            </summary>
+            <param name="bundleName">The name of the bundle.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="bundleName" /> is <c>null</c>.</exception>
+        </member>
+        <member name="M:ModLoader.BundleManager.GetAssetBundle(System.String)">
+            <summary>
+            Gets an already loaded bundle by the specified name.
+            </summary>
+            <param name="bundleName">The name of the bundle.</param>
+            <returns>An instance of <see cref="T:UnityEngine.AssetBundle" /> representing the asset bundle with the given name, or <c>null</c> if a bundle with that name has not been loaded.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="bundleName" /> is <c>null</c>.</exception>
+        </member>
+        <member name="M:ModLoader.BundleManager.IsBundleLoaded(System.String)">
+            <summary>
+            Determines whether a bundle with the specified name is currently loaded.
+            </summary>
+            <param name="bundleName">The name of the bundle.</param>
+            <returns><c>true</c> if a bundle with the specified name is currently loaded; otherwise, <c>false</c>.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="bundleName"/> is <c>null</c>.</exception>
+        </member>
+        <member name="T:ModLoader.DebugHelper">
+            <summary>
+            <para>A collection of methods for debugging mods.</para>
+            <para>NOTE: Most methods in this class will only be compiled if the mod is compiled in debug mode.</para>
+            </summary>
+        </member>
+        <member name="P:ModLoader.DebugHelper.IsDebugDrawingEnabled">
+            <summary>
+            <para>Gets a value indicating whether debug drawing is enabled.</para>
+            <para>If this is not <c>true</c>, draw calls will be ignored.</para>
+            </summary>
+            <value><c>true</c> if this instance is debug drawing enabled; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="M:ModLoader.DebugHelper.DebugDrawTransform(UnityEngine.Transform,System.Boolean)">
+            <summary>
+            <para>Visualizes the specified transform, for the current frame.</para>
+            <para>Each axis will be represented by a line, going in the direction of the axis.</para>
+            <para>The right (x) vector will be represented in red.</para>
+            <para>The up (y) vector will be represented in green.</para>
+            <para>The forward (z) vector will be represented in blue.</para>
+            <para>Each line will have a starting point at the transform's position.</para>
+            </summary>
+            <param name="transform">The transform to visualize.</param>
+            <param name="includeScale">if set to <c>true</c> the scale will also be visualized, otherwise each visualized axis will be 0.5 units.</param>
+            <remarks>
+            <para>Calls to this method are only compiled when mods are compiled in debug mode.</para>
+            <para><see cref="P:ModLoader.DebugHelper.IsDebugDrawingEnabled"/> must be <c>true</c> for this method to do anything.</para>
+            </remarks>
+        </member>
+        <member name="M:ModLoader.DebugHelper.DebugDrawRotation(UnityEngine.Vector3,UnityEngine.Quaternion)">
+            <summary>
+            <para>Visualizes the specified rotation, for the current frame.</para>
+            <para>Each axis will be represented by a line, going in the direction of the axis.</para>
+            <para>The right (x) vector will be represented in red.</para>
+            <para>The up (y) vector will be represented in green.</para>
+            <para>The forward (z) vector will be represented in blue.</para>
+            <para>Each line will have a starting point at the specified position.</para>
+            </summary>
+            <param name="position">The position to visualize the rotation at.</param>
+            <param name="rotation">The rotation to visualize.</param>
+            <remarks>
+            <para>Calls to this method are only compiled when mods are compiled in debug mode.</para>
+            <para><see cref="P:ModLoader.DebugHelper.IsDebugDrawingEnabled"/> must be <c>true</c> for this method to do anything.</para>
+            </remarks>
+        </member>
+        <member name="M:ModLoader.DebugHelper.DebugDrawLine(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Color)">
+            <summary>
+            Draws a line in 3D, for the current frame.
+            </summary>
+            <param name="start">The world start position of the line.</param>
+            <param name="end">The world end position of the line.</param>
+            <param name="color">The color of the line.</param>
+            <remarks>
+            <para>Calls to this method are only compiled when mods are compiled in debug mode.</para>
+            <para><see cref="P:ModLoader.DebugHelper.IsDebugDrawingEnabled"/> must be <c>true</c> for this method to do anything.</para>
+            </remarks>
+        </member>
+        <member name="M:ModLoader.DebugHelper.DebugDrawLine(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Color,System.Single)">
+            <summary>
+            Draws a line in 3D, for the specified duration.
+            </summary>
+            <param name="start">The world start position of the line.</param>
+            <param name="end">The world end position of the line.</param>
+            <param name="color">The color of the line.</param>
+            <param name="duration">The duration, in seconds, to draw the line.</param>
+            <remarks>
+            <para>Calls to this method are only compiled when mods are compiled in debug mode.</para>
+            <para><see cref="P:ModLoader.DebugHelper.IsDebugDrawingEnabled"/> must be <c>true</c> for this method to do anything.</para>
+            </remarks>
+        </member>
+        <member name="M:ModLoader.DebugHelper.DebugText(UnityEngine.Component,System.String)">
+            <summary>
+            <para>Draws text in the world for the specified component for 5 seconds.</para>
+            <para>This replaces any text that's already being drawn for the specified component.</para>
+            </summary>
+            <param name="component">The component to draw the text at.</param>
+            <param name="text">The text to draw.</param>
+            <remarks>
+            <para>Calls to this method are only compiled when mods are compiled in debug mode.</para>
+            <para><see cref="P:ModLoader.DebugHelper.IsDebugDrawingEnabled"/> must be <c>true</c> for this method to do anything.</para>
+            </remarks>
+        </member>
+        <member name="T:ModLoader.GameHelper">
+            <summary>
+            A helper class for general game functions.
+            </summary>
+        </member>
+        <member name="E:ModLoader.GameHelper.LevelChanged">
+            <summary>
+            <para>Occurs when a new level in the game has completed loading.</para>
+            <para>This is not called immediately upon level load, but once the level is completely ready for play.</para>
+            </summary>
+        </member>
+        <member name="M:ModLoader.GameHelper.GetMixerGroup(ModLoader.GameHelper.GameAudioMixerGroup)">
+            <summary>
+            Gets one of the game's built-in mixer groups.
+            </summary>
+            <param name="mixerGroup">The mixer group to get.</param>
+            <returns>An instance of <see cref="T:UnityEngine.Audio.AudioMixerGroup" /> representing the specified mixer group.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown if <paramref name="mixerGroup" /> is out of range.</exception>
+            <example>
+            This example assigns a mixer group to a custom audio source so that it'll be affected by slow motion, etc.
+            <code language="cs">
+            AudioSource audioSource = myGameObject.AddComponent&lt;AudioSource&gt;();
+            audioSource.spatialBlend = 1f;
+            audioSource.clip = myClip;
+            audioSource.mixerGroup = GameHelper.GetMixerGroup(GameHelper.GameAudioMixerGroup.Effects);
+            audioSource.Play();
+            </code>
+            </example>
+        </member>
+        <member name="T:ModLoader.GameHelper.GameAudioMixerGroup">
+            <summary>
+            The game's built-in mixer groups.
+            </summary>
+        </member>
+        <member name="T:ModLoader.Logging">
+            <summary>
+            A collection of methods for logging.
+            </summary>
+        </member>
+        <member name="M:ModLoader.Logging.LogDebug(System.Exception)">
+            <summary>
+            Logs the specified exception.
+            </summary>
+            <param name="ex">The exception to log.</param>
+            <para>Calls to this method are only compiled when mods are compiled in debug mode.</para>
+        </member>
+        <member name="M:ModLoader.Logging.Log(System.Exception)">
+            <summary>
+            Logs the specified exception.
+            </summary>
+            <param name="ex">The exception to log.</param>
+        </member>
+        <member name="M:ModLoader.Logging.LogDebug">
+            <summary>
+            Adds an empty line to the log.
+            </summary>
+            <para>Calls to this method are only compiled when mods are compiled in debug mode.</para>
+        </member>
+        <member name="M:ModLoader.Logging.Log">
+            <summary>
+            Adds an empty line to the log.
+            </summary>
+        </member>
+        <member name="M:ModLoader.Logging.Log(System.String)">
+            <summary>
+            Adds the specified string to the log.
+            </summary>
+        </member>
+        <member name="M:ModLoader.Logging.LogDebug(System.String)">
+            <summary>
+            Adds the specified string to the log.
+            </summary>
+            <para>Calls to this method are only compiled when mods are compiled in debug mode.</para>
+        </member>
+        <member name="T:ModLoader.ModSettings">
+            <summary>
+            A class to make mods configurable.
+            </summary>
+        </member>
+        <member name="M:ModLoader.ModSettings.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ModLoader.ModSettings"/> class.
+            </summary>
+        </member>
+        <member name="M:ModLoader.ModSettings.GetInstance``1">
+            <summary>
+            Gets an instance of <typeparamref name="T"/> derived from <see cref="T:ModLoader.ModSettings"/> for the calling mod.
+            </summary>
+            <typeparam name="T">The type deriving from <see cref="T:ModLoader.ModSettings"/> to get an instance of.</typeparam>
+            <returns>An instance of <typeparamref name="T"/> representing the settings for the calling mod.</returns>
+            <remarks>
+            <para>Subsequent calls to this method will return the same instance as the first call.</para>
+            <para>A mod can only have one instance, and any subsequent call with a different type than the first call will result in an <see cref="T:System.InvalidOperationException"/> exception.</para>
+            </remarks>
+        </member>
+        <member name="T:ModLoader.PatchManager">
+            <summary>
+            A helper class for patching game code.
+            </summary>
+        </member>
+        <member name="P:ModLoader.PatchManager.HarmonyInstance">
+            <summary>
+            <para>Gets or creates an instance of <see cref="P:ModLoader.PatchManager.HarmonyInstance"/> for the calling mod.</para>
+            <para>Mod Loader will automatically generate an ID for the instance.</para>
+            <para>Using this property to get a <see cref="P:ModLoader.PatchManager.HarmonyInstance" /> does not only make it easier to create an instance, as you don't need to come up with an id, and any patches made with the instance are automatically uninstalled when the mod is "unloaded".</para>
+            </summary>
+            <value>The harmony instance for this mod.</value>
+        </member>
+        <member name="E:ModLoader.PatchManager.CatalogReloaded">
+            <summary>
+            Occurs when the catalog has been reloaded. If you want to edit or add items to the catalog, you should do it in this event. Make sure to use <see cref="M:ModLoader.PatchManager.AddCatalogData(BS.CatalogData)" />.
+            </summary>
+        </member>
+        <member name="M:ModLoader.PatchManager.AddCatalogData(BS.CatalogData)">
+            <summary>
+            <para>Adds the specified <see cref="T:BS.CatalogData"/> to the catalog. You should use this method instead of adding it directly, or else Mod Loader will not be able to assign modded assets to the item.</para>
+            <para>You should also call this if you modify a built-in item with modded assets.</para>
+            <para>NOTE: It's not possible to use assets from multiple mods. If you update a <see cref="T:BS.CatalogData"/> added by a different mod, it'll lose its modded asset references for that mod.</para>
+            </summary>
+            <param name="data">The data to add to the catalog.</param>
+        </member>
+        <member name="T:ModLoader.PathHelper">
+            <summary>
+            A helper class for retrieving relevant paths.
+            </summary>
+        </member>
+        <member name="F:ModLoader.PathHelper.ModsFolderName">
+            <summary>
+            The name of the mods folder.
+            </summary>
+        </member>
+        <member name="P:ModLoader.PathHelper.CallingModPath">
+            <summary>
+            Gets the path to the mod folder of the calling mod.
+            </summary>
+            <value>The calling mod path.</value>
+        </member>
+        <member name="P:ModLoader.PathHelper.GamePath">
+            <summary>
+            Gets the root game path. This is the folder that contains 'Blade &amp; Sorcery.exe'
+            </summary>
+            <value>The root game path.</value>
+        </member>
+        <member name="P:ModLoader.PathHelper.DataPath">
+            <summary>
+            Gets the data path. This is the 'Blade &amp; Sorcery_Data' folder.
+            </summary>
+            <value>The data path.</value>
+        </member>
+        <member name="P:ModLoader.PathHelper.ModsRootPath">
+            <summary>
+            Gets the mods root path. This is the 'Mods' folder.
+            </summary>
+            <value>The mods root path.</value>
+        </member>
+        <member name="M:ModLoader.PathHelper.GetModPath(System.Reflection.Assembly)">
+            <summary>
+            Gets the path to the mod folder of the calling mod.
+            </summary>
+            <value>The calling mod path.</value>
+        </member>
+    </members>
+</doc>
