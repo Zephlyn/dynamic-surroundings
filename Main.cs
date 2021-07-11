@@ -21,6 +21,7 @@ namespace DynSurround {
         public bool EnableImbueWhileHeld = true;
         public bool EnableLightningPunch = true;
         public bool EnableGravityPunch = true;
+        public bool EnableFirePunch = true;
         public float HeldShockDamagePerSecond = 5f;
         public float PunchDelay = 2f;
         public float LightningPunchDamage = 5f;
@@ -47,8 +48,11 @@ namespace DynSurround {
         private float lastPunchTimeLeft;
         private float lastPunchTimeRight;
 
-        private DamagerData FireDamagerData;
         private string FireDamagerId = "Fireball";
+        private ItemData fireballItem;
+        private EffectData fireballEffect;
+        private EffectData fireballDeflectEffect;
+        private DamagerData fireballDamager;
 
         private Harmony harmony;
 
@@ -86,8 +90,12 @@ namespace DynSurround {
                     BoltEffectData = Catalog.GetData<EffectData>(BoltEffectId, true);
                     log.Info().Message("Set lightning effect data");
                 }
-                FireDamagerData = Catalog.GetData<DamagerData>(FireDamagerId, true);
-                log.Info().Message("Set fire damager data");
+
+                fireballItem = Catalog.GetData<ItemData>("DynamicProjectile");
+                fireballEffect = Catalog.GetData<EffectData>("SpellFireball");
+                fireballDeflectEffect = Catalog.GetData<EffectData>("SpellFireBallHitBlade");
+                fireballDamager = Catalog.GetData<DamagerData>("Fireball");
+                log.Info().Message("Set up fire punch");
 
                 ShockingCreatures = new Dictionary<Creature, float>();
                 log.Info().Message("Created dictionary");
@@ -110,7 +118,11 @@ namespace DynSurround {
 
                 log.Info().Message("<color=cyan>Loaded sectory integration!</color>".Italics());
             }
-                return base.OnLoadCoroutine(level);
+
+            if (System.IO.Directory.Exists(Application.streamingAssetsPath + "\\Mods\\FireDragonFist")) {
+                log.Info().Message("Dynamic Surroundings detected fire dragon iron fist. If theres anything fucky with the fire spell, TELL ME (Zephlyn) NOT TALION");
+            }
+            return base.OnLoadCoroutine(level);
         }
 
         #region Events
@@ -268,8 +280,49 @@ namespace DynSurround {
                             creature.brain.TryAction(actionShock, true);
                         }
                         log.Info().Message("Added some extra force");
+                    } else if (spell is SpellCastProjectile && EnableFirePunch) {
+                        var offset = Quaternion.Euler(
+                            UnityEngine.Random.value * 360.0f,
+                            UnityEngine.Random.value * 360.0f,
+                            UnityEngine.Random.value * 360.0f) * Vector3.forward * 0.2f;
+                        fireballItem.SpawnAsync(fireball => {
+                            fireball.transform.position = hand.transform.position + offset;
+                            fireball.transform.localScale = Vector3.one;
+                            fireball.rb.isKinematic = true;
+                            fireball.IgnoreRagdollCollision(Player.currentCreature.ragdoll);
+                            ThrowFireball(fireball, (collision.targetColliderGroup.collisionHandler.ragdollPart.transform.position - fireball.transform.position).normalized * 30f);
+
+                            FireBallDespawn Despawn = fireball.gameObject.AddComponent<FireBallDespawn>();
+                            Despawn.StartCoroutine(Despawn.DespawnAfter(0.2f));
+                        });
+                        log.Info().Message("Fire punch!");
                     }
                 }
+            }
+        }
+
+        public void ThrowFireball(Item fireball, Vector3 velocity) {
+            fireball.rb.isKinematic = false;
+
+            foreach (CollisionHandler collisionHandler in fireball.collisionHandlers) {
+                collisionHandler.SetPhysicModifier(this, 0, 0.0f);
+                foreach (Damager damager in collisionHandler.damagers) {
+                    damager.Load(fireballDamager, collisionHandler);
+                }
+            }
+            ItemMagicProjectile component = fireball.GetComponent<ItemMagicProjectile>();
+            if ((bool)(UnityEngine.Object)component) {
+                component.guided = false;
+                component.speed = 50f;
+                component.item.lastHandler = Player.currentCreature.handRight;
+                component.allowDeflect = true;
+                component.deflectEffectData = fireballDeflectEffect;
+                component.imbueBladeEnergyTransfered = 50.0f;
+                component.imbueSpellCastCharge = (SpellCastCharge)Player.currentCreature.mana.spells.Find(spell => spell.id == "Fire");
+                component.Fire(velocity, fireballEffect, shooterRagdoll: Player.currentCreature.ragdoll);
+            } else {
+                fireball.rb.AddForce(velocity, ForceMode.Impulse);
+                fireball.Throw(flyDetection: Item.FlyDetection.Forced);
             }
         }
         #endregion
@@ -430,5 +483,17 @@ namespace DynSurround {
             }
         }
         #endregion
+
+        class FireBallDespawn : MonoBehaviour {
+            protected Item item;
+            public void Awake() {
+                item = GetComponent<Item>();
+            }
+
+            public IEnumerator DespawnAfter(float Seconds) {
+                yield return new WaitForSeconds(Seconds);
+                item.Despawn();
+            }
+        }
     }
 }
