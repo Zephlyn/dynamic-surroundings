@@ -103,4 +103,9 @@
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy /Y "$(TargetPath)" "D:\SteamLibrary\steamapps\common\Blade &amp; Sorcery\BladeAndSorcery_Data\StreamingAssets\Mods\zzzzzDynamic Surroundings"
+xcopy /Y "$(TargetDir)$(TargetName).pdb" "D:\SteamLibrary\steamapps\common\Blade &amp; Sorcery\BladeAndSorcery_Data\StreamingAssets\Mods\zzzzzDynamic Surroundings"
+</PostBuildEvent>
+  </PropertyGroup>
 </Project>
