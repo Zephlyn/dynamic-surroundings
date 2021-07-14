@@ -48,11 +48,14 @@ namespace DynSurround {
         private float lastPunchTimeLeft;
         private float lastPunchTimeRight;
 
-        private string FireDamagerId = "Fireball";
         private ItemData fireballItem;
         private EffectData fireballEffect;
         private EffectData fireballDeflectEffect;
         private DamagerData fireballDamager;
+
+        public EffectInstance[] __BoltEffectInstances;
+        public int __SimultanousBolts = 10;
+        public Transform[] __BoltTargets;
 
         private Harmony harmony;
 
@@ -83,6 +86,11 @@ namespace DynSurround {
                 log.Info().Message("Set possesion event");
                 EventManager.onUnpossess += EventManager_onUnpossess;
                 log.Info().Message("Set un-possess event");
+
+                BetterEvents.OnPlayerHeldItemCollideWorld += BetterEvents_OnPlayerHeldItemCollideWorld;
+                __BoltTargets = new Transform[__SimultanousBolts];
+                __BoltEffectInstances = new EffectInstance[__SimultanousBolts];
+                log.Info().Message("Set up staff slams");
 
                 //BetterEvents.OnCreatureHitByPlayer += BetterEvents_OnCreatureHitByPlayer;
 
@@ -123,6 +131,134 @@ namespace DynSurround {
                 log.Info().Message("Dynamic Surroundings detected fire dragon iron fist. If theres anything fucky with the fire spell, TELL ME (Zephlyn) NOT TALION");
             }
             return base.OnLoadCoroutine(level);
+        }
+
+        private void BetterEvents_OnPlayerHeldItemCollideWorld(CollisionInstance collisionInstance) {
+            log.Info().Message("Held item collision");
+            if (collisionInstance.impactVelocity.magnitude > 3) {
+                log.Info().Message("Collision velocity over 3");
+                var damageStruct = collisionInstance.damageStruct;
+                var item = damageStruct.damager.collisionHandler.item;
+                if(item.itemId == "StaffShaman" || item.itemId == "StaffDruid") {
+                    log.Info().Message("Player slammed staff against world");
+                    Vector3 pos = item.transform.position;
+                    Transform trans = item.transform;
+                    foreach(ColliderGroup cgroup in item.colliderGroups) {
+                        if(cgroup.data.id == "CrystalStaff") {
+                            pos = cgroup.transform.position;
+                            trans = cgroup.transform;
+                            log.Info().Message("Got crystal pos");
+                        }
+                    }
+                    foreach(Imbue imbue in item.imbues) {
+                        SpellCastCharge spellCastBase = imbue.spellCastBase;
+                        if (spellCastBase.id == "Fire") {
+                            log.Info().Message("Staff imbued with fire");
+                            int FireballAmount = 20;
+                            List<Item> Fireballs = new List<Item>();
+                            for (int i = 1; i <= FireballAmount; i++) {
+                                var offset = Quaternion.Euler(
+                                    UnityEngine.Random.value * 360.0f,
+                                    UnityEngine.Random.value * 360.0f,
+                                    UnityEngine.Random.value * 360.0f) * Vector3.forward * 0.2f;
+                                fireballItem.SpawnAsync(Fireball => {
+                                    Fireball.transform.position = pos;
+                                    Fireball.transform.rotation = Quaternion.Euler(0f, 360 / FireballAmount * Fireballs.Count, 0f);
+                                    foreach (Item item2 in Fireballs) {
+                                        item2.IgnoreObjectCollision(Fireball);
+                                        item2.IgnoreObjectCollision(item);
+                                    }
+                                    Fireball.IgnoreRagdollCollision(Player.currentCreature.ragdoll);
+
+                                    Fireball.rb.AddForce(Fireball.transform.forward * 35f, ForceMode.Impulse);
+                                    Fireball.Throw(1f, Item.FlyDetection.Forced);
+
+                                    FireBallDespawn Despawn = Fireball.gameObject.AddComponent<FireBallDespawn>();
+                                    Despawn.StartCoroutine(Despawn.DespawnAfter(5f));
+                                    Fireballs.Add(Fireball);
+                                });
+                            }
+                            log.Info().Message("Fire slam executed");
+                        } else if (spellCastBase.id == "Lightning") {
+                            item.StartCoroutine(LightningSlam(item, pos, trans));
+                        }
+                    }
+                }
+            }
+        }
+
+        IEnumerator LightningSlam(Item StaffItem, Vector3 CrystalPos, Transform CrystalTransform) {
+            for (int z = 0; z < __SimultanousBolts; z++) {
+                GameObject obj = new GameObject();
+                obj.transform.position = new Vector3(CrystalPos.x, CrystalPos.y + 15f, CrystalPos.z);
+                obj.name = $"BoltSourceFor{StaffItem.name}";
+
+                __BoltTargets[z] = new GameObject("TargetBolt" + z).transform;
+                __BoltEffectInstances[z] = BoltEffectData.Spawn(Player.currentCreature.transform, true, Array.Empty<Type>());
+                __BoltEffectInstances[z].SetTarget(__BoltTargets[z]);
+
+                __BoltTargets[z].position = CrystalPos;
+                __BoltEffectInstances[z].SetSource(obj.transform);
+
+                __BoltEffectInstances[z].Play();
+            }
+            Util.PlayEffectAt(CrystalPos, "LightningStrike");
+
+            if (inst == null) {
+                inst = Catalog.GetData<EffectData>("ImbueLightningRagdoll").Spawn(Player.currentCreature.ragdoll.rootPart.transform, true, Array.Empty<Type>());
+                inst.SetRenderer(Player.currentCreature.GetRendererForVFX(), false);
+                inst.SetIntensity(1f);
+                inst.Play(0);
+            }
+
+            Color prevIrisColor = Player.currentCreature.GetColor(Creature.ColorModifier.EyesIris);
+            Color prevScleraColor = Player.currentCreature.GetColor(Creature.ColorModifier.EyesSclera);
+
+            Player.currentCreature.SetColor(Color.cyan, Creature.ColorModifier.EyesIris);
+            Player.currentCreature.SetColor(Color.cyan, Creature.ColorModifier.EyesSclera);
+
+            yield return new WaitForSeconds(0.5f);
+
+            for (int z = 0; z < __SimultanousBolts; z++) {
+                if (__BoltTargets != null) {
+                    UnityEngine.Object.Destroy(__BoltTargets[z].gameObject);
+                }
+
+                if (__BoltEffectInstances != null) {
+                    __BoltEffectInstances[z].End(false, -1f);
+                }
+            }
+
+            foreach (Creature npc in Creature.list) {
+                if (Vector3.Distance(npc.transform.position, CrystalPos) <= 10 && npc != Player.currentCreature && !npc.isKilled) {
+                    for (int z = 0; z < __SimultanousBolts; z++) {
+                        __BoltTargets[z] = new GameObject("TargetBolt" + z).transform;
+                        __BoltEffectInstances[z] = BoltEffectData.Spawn(Player.currentCreature.transform, true, Array.Empty<Type>());
+                        __BoltEffectInstances[z].SetTarget(__BoltTargets[z]);
+
+                        __BoltTargets[z].position = npc.animator.GetBoneTransform(HumanBodyBones.Hips).position;
+                        __BoltEffectInstances[z].SetSource(CrystalTransform);
+
+                        __BoltEffectInstances[z].Play();
+
+                        ActionShock actionShock = npc.brain.GetAction<ActionShock>();
+                        if (actionShock != null) {
+                            actionShock.Refresh(1f, 10f);
+                        } else {
+                            actionShock = new ActionShock(1f, 10f, Catalog.GetData<EffectData>("ImbueLightningRagdoll"));
+                            npc.brain.TryAction(actionShock, true);
+                        }
+                    }
+
+                    npc.ragdoll.SetState(Ragdoll.State.Destabilized);
+                }
+            }
+
+            Player.currentCreature.SetColor(prevIrisColor, Creature.ColorModifier.EyesIris);
+            Player.currentCreature.SetColor(prevScleraColor, Creature.ColorModifier.EyesSclera);
+
+            inst?.End(false, -1);
+            inst = null;
         }
 
         #region Events
@@ -478,6 +614,20 @@ namespace DynSurround {
 
             [HarmonyPatch(typeof(SpellCastCharge), nameof(SpellCastCharge.OnImbueCollisionStart))]
             private static void Postfix(SpellCastLightning __instance, CollisionInstance collisionInstance) {
+                Dummy(__instance);
+                log.Info().Message("Ground slam with lightning spell");
+            }
+        }
+
+        [HarmonyPatch]
+        private class FireSlamPatch {
+            [HarmonyReversePatch]
+            [HarmonyPatch(typeof(SpellCastCharge), nameof(SpellCastCharge.OnImbueCollisionStart))]
+            [MethodImpl(MethodImplOptions.NoInlining)]
+            static void Dummy(SpellCastProjectile instance) { return; }
+
+            [HarmonyPatch(typeof(SpellCastCharge), nameof(SpellCastCharge.OnImbueCollisionStart))]
+            private static void Postfix(SpellCastProjectile __instance, CollisionInstance collisionInstance) {
                 Dummy(__instance);
                 log.Info().Message("Ground slam with lightning spell");
             }

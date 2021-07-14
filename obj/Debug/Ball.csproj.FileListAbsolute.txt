@@ -1,0 +1,147 @@
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\0Harmony.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\Assembly-CSharp-firstpass.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\Assembly-CSharp.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\Sirenix.OdinInspector.Attributes.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.UI.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\PowerBooks.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\Unity.Postprocessing.Runtime.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.IMGUIModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.WindModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.ClothModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\Unity.Timeline.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.AssetBundleModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.UnityWebRequestModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.DirectorModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.Physics2DModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.TerrainModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.TerrainPhysicsModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\SteamVR.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\SteamVR_Actions.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.VRModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.UIModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.SpatialTracking.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\Newtonsoft.Json.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.UnityWebRequestAssetBundleModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.ImageConversionModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.XRModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.UnityWebRequestWWWModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.SharedInternalsModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.AccessibilityModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.ClusterInputModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.GridModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.LocalizationModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.ScreenCaptureModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.SpriteMaskModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.SpriteShapeModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.StreamingModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.StyleSheetsModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.TilemapModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.UnityConnectModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.UnityWebRequestTextureModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.VehiclesModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.UNETModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.ClusterRendererModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.GameCenterModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.InputModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.TextCoreModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.UIElementsModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.UnityAnalyticsModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.VideoModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.ARModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.CrashReportingModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\UnityEngine.PerformanceReportingModule.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\Valve.Newtonsoft.Json.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\Sirenix.Serialization.Config.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\Sirenix.Utilities.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\obj\Debug\Ball.csprojAssemblyReference.cache
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\obj\Debug\Ball.csproj.CoreCompileInputs.cache
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\obj\Debug\Ball.csproj.CopyComplete
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\Lostvayne.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\bin\Debug\Lostvayne.pdb
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\obj\Debug\Lostvayne.dll
+C:\Users\anton\Downloads\Scripted Weapon Template\Template\obj\Debug\Lostvayne.pdb
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\Imbue.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\Imbue.pdb
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\Assembly-CSharp.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.UI.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.TerrainModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\PowerBooks.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.IMGUIModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\Sirenix.OdinInspector.Attributes.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.XRModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\Unity.RenderPipelines.Universal.Runtime.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.AssetBundleModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.ClothModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\Unity.Timeline.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.UnityWebRequestModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.WindModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\Unity.RenderPipelines.Core.Runtime.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.Physics2DModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.UnityWebRequestWWWModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\Newtonsoft.Json.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\PaintIn3D.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.UIModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\SteamVR.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.VRModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\Oculus.Platform.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.SpatialTracking.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.DirectorModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.InputLegacyModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.UnityWebRequestAssetBundleModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\Oculus.VR.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.ImageConversionModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\Sirenix.Serialization.Config.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\Sirenix.Utilities.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.SharedInternalsModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.AccessibilityModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.ClusterInputModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.GridModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.LocalizationModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.ScreenCaptureModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.SpriteMaskModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.SpriteShapeModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.StreamingModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.StyleSheetsModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.TerrainPhysicsModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.TilemapModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.UnityConnectModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.UnityWebRequestTextureModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.VehiclesModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.UNETModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.ClusterRendererModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.GameCenterModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.InputModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.TextCoreModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.UIElementsModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.UnityAnalyticsModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.VideoModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.ARModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.CrashReportingModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.PerformanceReportingModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\UnityEngine.SubsystemsModule.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\Unity.RenderPipeline.Universal.ShaderLibrary.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\Valve.Newtonsoft.Json.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\obj\Debug\Ball.csprojAssemblyReference.cache
+F:\Users\anton\Downloads\Modular Imbues\Template\obj\Debug\Ball.csproj.CoreCompileInputs.cache
+F:\Users\anton\Downloads\Modular Imbues\Template\obj\Debug\Ball.csproj.CopyComplete
+F:\Users\anton\Downloads\Modular Imbues\Template\obj\Debug\Imbue.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\obj\Debug\Imbue.pdb
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\Assembly-CSharp-firstpass.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\RainyReignGames.Dismemberment.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\Unity.Mathematics.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\VacuumShaders.TerrainToMesh.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\Cinemachine.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\Unity.Burst.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\Unity.Jobs.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\NavMeshComponents.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\chabuk.manikinmono.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\Unity.ResourceManager.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\RainyReignGames.MeshUtilities.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\RainyReignGames.Reveal.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\IngameDebugConsole.Runtime.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\Unity.Addressables.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\Newtonsoft.Json.UnityConverters.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\RainyReignGames.Collections.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\Unity.Collections.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\Unity.Burst.Unsafe.dll
+F:\Users\anton\Downloads\Modular Imbues\Template\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
